@@ -9,8 +9,8 @@ utilizando las reglas de negovio apropiadas para la gestion de identificacion y 
 ## Historial de Prácticas
 |No.|Fecha|Descripción|Estatus|Potenciadores|
 |---|-----------|-------|-----|-----|
-|1.|||
-|2.|||
+|1.|17/10/2024|Nuevo reppositorio del proyecto implementando .gitignore|11|Finalizada|
+|2.|22/10/2024|Creacion de una aplicacion web usando Exdpress|12|Activa|
 |3.|||
 |4.|||
 
@@ -20,7 +20,7 @@ utilizando las reglas de negovio apropiadas para la gestion de identificacion y 
 
 
 ### Autor
-Edwin Hernandez Campos
+Edwin Hernandez Campos /[@Edwincamp](https://github.com/Edwincamp)
 Unidad 2
 Aplicaciones Web Orientadas a Servicios
 Octubre 2024
