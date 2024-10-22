@@ -15,8 +15,8 @@ utilizando las reglas de negovio apropiadas para la gestion de identificacion y 
 |4.|||
 
 ### Tech Stack
-![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) !
-[Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) 
+![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
 
 
 ### Autor
