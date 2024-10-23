@@ -1,6 +1,6 @@
 // Ejemplo de activacion de HOT RELOAD
-//const nombre = "Edwin"
-/* console.log('Hola $(Edwin), desde NodeJS, Esto esta en hot reload ')*/
+const nombre = "Edwin"
+ console.log('Hola $(Edwin), desde NodeJS, Esto esta en hot reload ')
 
 //const express = requiere ('express');
 // Importar la libreria para crear un servidor web -     / ECHA-Script 6
@@ -23,7 +23,7 @@ app.get("/quieneres",function(req,res){
     res.json(
         {
             "nombre": "Edwin Hernandez Campos",
-            "Carrera": "Desarrollo de software Multiplataforma",
+            "Carrera": " TI. Desarrollo de software Multiplataforma",
             "grado": "4",
             "grupo": "A"
         }
