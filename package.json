@@ -1,0 +1,40 @@
+{
+  "name": "mx.utxj.ti.awos.bienesraices",
+  "version": "1.0.0",
+  "description": "Proyecto de clase para la unidad 2 de la asignatura awos utilizando Node.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "saluda": "node saluda.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edwincamp/Bienes_Raices_230425.git"
+  },
+  "keywords": [
+    "MVC",
+    "Express",
+    "Sequelite",
+    "MySQL",
+    "TailwindCSS",
+    "Nodemon",
+    "NodeJS",
+    "PUG",
+    "NodeMailer",
+    "Mailtrap",
+    "JWT"
+  ],
+  "author": "\"Edwin Hernandez Campos_230425\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edwincamp/Bienes_Raices_230425/issues"
+  },
+  "homepage": "https://github.com/Edwincamp/Bienes_Raices_230425#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
