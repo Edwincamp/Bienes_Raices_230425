@@ -11,7 +11,7 @@ utilizando las reglas de negovio apropiadas para la gestion de identificacion y 
 |---|-----------|-------|-----|-----|
 |1.|17/10/2024|Nuevo reppositorio del proyecto implementando .gitignore|11|Finalizada|
 |2.|22/10/2024|Creacion de una aplicacion web usando Exdpress|12|Finalizada|
-|3.|23/10/2024|operaciones Basicas de un API a traves de los verbos HTTP|12|Activa|
+|3.|23/10/2024|operaciones Basicas de un API a traves de los verbos HTTP|12|Finalizada|
 |4.|||
 
 ### Tech Stack
