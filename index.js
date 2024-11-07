@@ -1,45 +1,35 @@
-// Ejemplo de activacion de HOT RELOAD
-//const nombre = "Edwin"
-// console.log('Hola $(Edwin), desde NodeJS, Esto esta en hot reload ')
+import generalRoutes from './routes/generalRoutes.js'
+import userRoutes from './routes/userRoutes.js'
+import express from 'express'
+// ? Ejemplo de activacion de HOT RELOAD
+//console.log("Hola desde NodeJS, esto esta en hot reload")
+//const express = require(`express`) // ? Usando CommonJS
+// ? Importar la libreria para crear un servidor web - CommonJS / ECMA Script 6
+// ? Instanciar nuestra aplicacion web
 
-//const express = requiere ('express');
-// Importar la libreria para crear un servidor web -     / ECHA-Script 6
-// Instacia, nujestra aplicacion web
-//import express from 'express';
+const app = express()
 
-//const app = express();
+//Habilitar PUG
+app.set('view engine', 'pug')
+app.set('views','./Views')
 
-//const port = 3000;
-//app.listen (port, ()=>{
- //   console.log(`La aplicacion ha iniciado en el puerto; ${port}`);
-//})
-  
-// Routing Enrutamientop para peliciones
-//app.get("/", function(req,res){
-   //res.send ("Hola desde la web, en NodeJS")
-//})
+//Carpeta publica
+app.use(express.static('public'))
 
-///app.get("/quieneres",function(req,res){
-  //  res.json(
-  //      {
-   //         "nombre": "Edwin Hernandez Campos",
-   //         "Carrera": " TI. Desarrollo de software Multiplataforma",
-    //        "grado": "4",
-     //       "grupo": "A"
-  //      }
-  //  )
-//})
-import generalRoutes from './Routes/generalRoutes.js';
-import userRoutes from './Routes/userRoutes.js'
-import express  from 'express'
+//definir el puerto
+const port = 3000 
 
-const app =  express()
+app.listen(port, () =>
+    console.log(`La aplicacion ha iniciado en el puerto: ${port}`))
+// ? Routing - Enrutacion para peticiones
+app.get('/', function(req, res){
+    res.send('Hola desde la web en NodeJS')
+})
 
-const port = 3000
+app.get('/hola', function(req, res){
+    res.json({msg: 'Hola desde la web en NodeJS'})
+})
 
-app.listen(port,()=>
-    console.log('La aplicación ha iniciado en el puerto ${port}'))
-app.use("/",generalRoutes)
-app.use("/usuario",userRoutes)
-
-
+//Routing
+app.use("/",generalRoutes);
+app.use("/user/", userRoutes);
