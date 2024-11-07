@@ -1,6 +1,7 @@
 import generalRoutes from './routes/generalRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import express from 'express'
+
 // ? Ejemplo de activacion de HOT RELOAD
 //console.log("Hola desde NodeJS, esto esta en hot reload")
 //const express = require(`express`) // ? Usando CommonJS
