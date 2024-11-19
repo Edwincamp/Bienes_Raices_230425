@@ -2,27 +2,29 @@ extends ../layout/index
 
 block contenido
     div.py-10
-        h1.text-center.text-4xl.my-10.font-extrabold.text-emerald-600 Bienes
-            span.font-normal.text-gray-800 Raices
-        h2.text-center.text-3xl.font-extrabold= page
+        h1.text-center.text-4xl.my-10.font-extrabold.text-green  Bienes
+            span.font-normal.text-black Raices
+        h2.text-center.text-3xl.font-extrabold.text-black= page
 
         .mt-8.mx-auto.max-w-xl
-            .bg-gray-50.py-8.px-4.shadow-xl.rounded-lg
+            .bg-white.py-8.px-4.shadow-xl.rounded-lg
                 form.space-y-5(action="/login" method="POST" noValidate)
                     div 
-                        label.block.text-sm.uppercase.text-gray-700.mb-3.font-semibold(for="email") Correo: 
-                        input#email.w-full.px-3.py-2.border.border-gray-300.rounded-sm.placeholder-gray-400(placeholder="user@domain.com" name="email")
+                        label.block.text-sm.uppercase.text-black.mb-3.font-semibold(for="email") Correo: 
+                        input#email.w-full.px-3.py-2.border.border-blue.rounded-sm.placeholder-gray-400(placeholder="user@domain.com" name="email")
 
                     div 
-                        label.block.text-sm.uppercase.text-gray-700.mb-3.font-semibold(for="password") Contraseña:
-                        input#password.w-full.px-3.py-2.border.border-gray-300.rounded-sm.placeholder-gray-400(placeholder="*******" name="password" type="password") 
+                        label.block.text-sm.uppercase.text-black.mb-3.font-semibold(for="password") Contraseña:
+                        input#password.w-full.px-3.py-2.border.border-blue.rounded-sm.placeholder-gray-400(placeholder="*******" name="password" type="password") 
                     
                     input#btn-login(
                         type="submit" 
                         value="Login"
-                        class="w-full bg-emerald-700 text-white font-semibold py-3 rounded-lg hover:bg-emerald-800 cursor-pointer"
+                        class="w-full bg-green text-white font-semibold py-3 rounded-lg hover:bg-green-dark cursor-pointer"
                     )
 
                     div.flex.items-center.justify-between.pt-5
-                        a.text-sm.text-gray-500(href="/user/register" class="hover:underline decoration-emerald-700") ¿No tienes una cuenta?, Regístrate
-                        a.text-sm.text-gray-500(href="/user/passwordRecovery" class="hover:underline decoration-emerald-700") ¿Olvidaste tu contraseña?, Recupérala
+                        a.text-sm.text-gray-500(href="/user/register" class="hover:underline decoration-green") ¿No tienes una cuenta?, Regístrate
+                        a.text-sm.text-gray-500(href="/user/passwordRecovery" class="hover:underline decoration-green") ¿Olvidaste tu contraseña?, Recupérala
+
+
