@@ -4,11 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        white: '#FFFFFF', // Blanco
-        black: '#000000', // Negro
-        blue: '#95B4D5', // Azul claro
-        red: '#F75555', // Rojo
-        green: '#93E16A', // Verde
+        background: '#FFFFFF', // Blanco
+        primaryText: '#000000', // Negro
+        formBackground: '#95B4D5', // Azul claro
+        action:'#F75555', // Rojo
+        secondaryText: '#93E16A', // Verde
+        hoverAction: '#93E16A', 
       },
     },
   },

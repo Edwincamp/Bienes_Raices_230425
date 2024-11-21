@@ -2,29 +2,23 @@ extends ../layout/index
 
 block contenido
     div.py-10
-        h1.text-center.text-4xl.my-10.font-extrabold.text-green  Bienes
-            span.font-normal.text-black Raices
-        h2.text-center.text-3xl.font-extrabold.text-black= page
+        h1.text-4xl.my-10.font-extrabold.text-center.text-action Bienes 
+            span.font-normal.text-primaryText Raices
+        h2.text-center.text-2xl.font-extrabold= page
 
-        .mt-8.mx-auto.max-w-xl
-            .bg-white.py-8.px-4.shadow-xl.rounded-lg
-                form.space-y-5(action="/login" method="POST" noValidate)
-                    div 
-                        label.block.text-sm.uppercase.text-black.mb-3.font-semibold(for="email") Correo: 
-                        input#email.w-full.px-3.py-2.border.border-blue.rounded-sm.placeholder-gray-400(placeholder="user@domain.com" name="email")
+        .mt-8.mx-auto.max-w-lg
+            .bg-formBackground.py-8.px-6.rounded-md.shadow-md
+                form(action="/login" method="post").space-y-5
+                    input(type="hidden" name="_csrf" value= csrfToken)
+                    div.mb-5
+                        label.block.text-sm.uppercase.text-secondaryText.mb-2.font-bold Ingresa tu email:
+                        input#email.w-full.px-4.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder="Ingresa tu email" type="email" name="email" required)
+                    div.mb-5
+                        label.block.text-sm.uppercase.text-secondaryText.mb-2.font-bold Ingresa tu contraseña:
+                        input#password.w-full.px-4.py-2.border.border-gray-300.rounded-md.placeholder-gray-400(placeholder="Ingresa tu contraseña" type="password" name="password" required)
 
-                    div 
-                        label.block.text-sm.uppercase.text-black.mb-3.font-semibold(for="password") Contraseña:
-                        input#password.w-full.px-3.py-2.border.border-blue.rounded-sm.placeholder-gray-400(placeholder="*******" name="password" type="password") 
-                    
-                    input#btn-login(
-                        type="submit" 
-                        value="Login"
-                        class="w-full bg-green text-white font-semibold py-3 rounded-lg hover:bg-green-dark cursor-pointer"
-                    )
+                    input(class="w-full bg-action text-white hover:bg-hoverAction font-bold py-3 cursor-pointer" type="submit" value="Iniciar sesión")
 
-                    div.flex.items-center.justify-between.pt-5
-                        a.text-sm.text-gray-500(href="/user/register" class="hover:underline decoration-green") ¿No tienes una cuenta?, Regístrate
-                        a.text-sm.text-gray-500(href="/user/passwordRecovery" class="hover:underline decoration-green") ¿Olvidaste tu contraseña?, Recupérala
-
-
+                    .flex.items-center.justify-between
+                        a.text-sm.text-secondaryText(href="/auth/register" class="hover:text-action") ¿No tienes una cuenta? Crea una
+                        a.text-sm.text-secondaryText(href="/auth/passwordRecovery" class="hover:text-action") ¿Olvidaste tu contraseña? Recupérala
