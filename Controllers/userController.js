@@ -19,10 +19,26 @@ const formularioRegister = (req, res) => {
 
 const register = async (req, res) => { 
 
-    await check('nombre').notEmpty().withMessage('El nombre no puede ir vacio').run(req)
-    await check('email').isEmail().withMessage('El correo no puede ir vacio').run(req)
-    await check('password').isLength({ min: 8 }).withMessage('La contraseña debe ser de al menos 8 caracteres').run(req)
-    await check('confirmPassword').custom((value, { req }) => value === req.body.password).withMessage('Las contraseñas no coinciden').run(req)
+    await check('nombre').notEmpty().withMessage('El nombre no puede ir vacio X').run(req)
+    await check('email').isEmail().withMessage('El correo no puede ir vacio X').run(req)
+    await check('password').isLength({ min: 8 }).withMessage('La contraseña debe ser de al menos 8 caracteres X').run(req)
+    await check('confirmPassword').custom((value, { req }) => value === req.body.password).withMessage('Las contraseñas no coinciden X').run(req)
+
+    await check('birthDate').isISO8601().withMessage('La fecha de nacimiento debe ser válida X').bail().custom((value) => {
+        const birthDate = new Date(value);
+        const today = new Date();
+        const age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        const dayDiff = today.getDate() - birthDate.getDate();
+
+        // Ajustar la edad si aún no ha pasado el cumpleaños este año
+        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+            return age - 1 >= 18;
+        }
+        return age >= 18;
+    })
+    .withMessage('Debe ser mayor de edad para registrarse. X')
+    .run(req);
 
     let result = validationResult(req)
 
@@ -35,12 +51,13 @@ const register = async (req, res) => {
             user: {
                 nombre: req.body.nombre,
                 email: req.body.email,
+                birthDate: req.body.birthDate,
             }
         })
     }
 
 // ? Extraer datos
-const { nombre, email, password} = req.body
+const { nombre, email, password, birthDate} = req.body
 
     // ? Verificar que el usuario no este duplicado
     const userExist = await User.findOne({ where: {email : email }})
@@ -52,7 +69,8 @@ const { nombre, email, password} = req.body
             errores: [{msg: 'El usuario ya existe'}],
             user: {
                 nombre: req.body.nombre,
-                email: req.body.email
+                email: req.body.email,
+                birthDate: req.body.birthDate,
             }
         })
     }
@@ -62,6 +80,7 @@ const { nombre, email, password} = req.body
         nombre,
         email,
         password,
+        birthDate,
         token: generateId()
     })
 
@@ -77,7 +96,7 @@ const { nombre, email, password} = req.body
     // ? Mostrar mensaje de confirmacion
     res.render('templates/mesage', {
         page: 'Cuenta Creada Correctamente', 
-        mesage: 'Hemos enviado un correo de confirmacion, presiona el enlace'
+        mesage: `Se ha enviado un email de confirmación a: ${req.body.email}, por favor, ingrese al siguiente enlace`
     })
 }
 
@@ -99,7 +118,7 @@ const confirmAccount = async (req, res) => {
 
     // ? Confirmar la cuenta
     confirmUser.token = null
-    confirmUser.confirmAccount = true
+    confirmUser.confirm = 1
     await confirmUser.save()
 
     res.render('auth/confirmAccount', {
