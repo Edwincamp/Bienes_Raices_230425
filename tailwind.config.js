@@ -9,7 +9,8 @@ export default {
         formBackground: '#95B4D5', // Azul claro
         action:'#F75555', // Rojo
         secondaryText: '#93E16A', // Verde
-        hoverAction: '#93E16A', 
+        hoverAction: '#93E16A',
+        error: '#FF5252', 
       },
     },
   },
