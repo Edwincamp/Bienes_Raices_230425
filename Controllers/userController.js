@@ -56,6 +56,20 @@ const register = async (req, res) => {
         })
     }
 
+        await transport.sendPail({
+            from: 'bienesraices_230425.com',
+            to: email,
+            subject: 'solicitud de actualizacion de contraseña en BienesRaices.com',
+            text: 'Por favor actualiza tu contraseña para ingresar a ola plataforma',
+            html: <p>Hola, <span style="color: red"> ${name}</span>, <br>
+            Haz reportado el olvido perdida de tu contrasseña para acceder a tu cuenta de BienesRaices...
+            </br>
+            <p> Por lo que necesitamos que ingreses a la siguiente liga para: 
+            <a href="${process.env.BACKEND_DOMAIN}:${process.env.BACKEND_PORT}/auth/changePassword/${token}">Actualizar Contraseña</a> 
+            </p> </p>
+            
+        })
+
 // ? Extraer datos
 const { nombre, email, password, birthDate} = req.body
 
@@ -127,6 +141,7 @@ const confirmAccount = async (req, res) => {
     })
 
 }
+     
 
 const formularioPasswordRecovery = (req, res) => {
     res.render('auth/passwordRecovery', {
@@ -260,6 +275,7 @@ const checkToken = async (req, res) => {
   };
 
 export {
+<<<<<<< HEAD
     formularioLogin,
     formularioRegister,
     formularioPasswordRecovery, 
@@ -270,3 +286,18 @@ export {
     checkToken,
     newPassword,    
 }
+=======
+    formularioLogin, formularioRegister, register, confirmAccount, formularioPasswordRecovery
+}
+
+    if (extingUser)
+    {
+            return response.render("auth/passwordRecovery"),{
+                page: 'Error, no existe una cuenta asociada al coprreo electronico ingresado.'
+                csrfToken: req.csrfToken(),
+                errores: [(msg: 'El email no existe')],
+                
+
+            }
+    }
+>>>>>>> 360855db5b86d6f1263d571f37cc205b19b03b70
