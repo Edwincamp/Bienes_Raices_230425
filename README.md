@@ -12,6 +12,7 @@ utilizando las reglas de negovio apropiadas para la gestion de identificacion y 
 |10.|2024/10/23|Operaciones Basicas de un API a traves de los verbos HTTP|12|✅Finalizada|
 |11.|2024/11/05|Implementacion de las pantallas de registro, logeo y recuperacion de contraseña|13|✅Finalizada|
 |12.|2024/11/21|Integración de Funcionalidad de Creación de Cuentas de Usuario.|30|✅Finalizada|
+|13.|2024/12/03|Implementación de recupueración de contraseñas|20|✅Finalizada|
 
 ### Tech Stack
 ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) 
